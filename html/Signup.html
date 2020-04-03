@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign up</title>
+        <link rel="stylesheet" href="styles/signup.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"> 
+        function checkEmail()
+        {
+            var email = document.getElementById('txtEmail');
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        
+            if (!filter.test(email.value)) {
+            alert('Please provide a valid email address');
+            email.focus;
+            return false;
+            }
+        }
+      </script>
+        
+       
+    </head>
+	<body >
+        <div class="loginbox" style="width: 320px;height: 650px;top:70%">
+            <h1>Sign up</h1>
+            <form action="signup1.php" method="post" onsubmit="return checkEmail(this)">
+                <p>User Name:</p>
+                <input type="text" placeholder="Enter User Name" name="fname" required>
+                <p>Email id:</p>
+                    <input type="email" placeholder="Enter your email" class="emailid" required>
+                <p>Contact Number:</p>
+                <input type='tel' placeholder='Enter your phone number here' id="phone" name="phone" required>               
+                <p>Gender:</p><br>
+                <p>Male:<input type='radio' name='gender' value='m' required></p>
+                <p>Female:<input type='radio' name='gender' value='f' required></p>
+                <p>Other:<input type="radio" name="gender" value='o' required></p>
+                <p>Password</p>
+                <input type="password" placeholder="Enter Password" class="password" id="pass" required>
+                <br>
+                <input type='submit' name='submit' id="subbtn" value="Next">
+            </form>
+        </div>
+    </body>
+</html>
